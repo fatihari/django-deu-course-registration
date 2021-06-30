@@ -1,0 +1,1 @@
+# django-deu-course-registration-
