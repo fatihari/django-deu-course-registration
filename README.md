@@ -35,11 +35,3 @@
 
 ![13](https://user-images.githubusercontent.com/57245919/123976054-83a03a00-d9c6-11eb-8f44-bf40e1782e76.jpg)
 
-
-
-
-
-
-
-# django-deu-course-registration
-# django-course-registration
