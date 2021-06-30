@@ -42,3 +42,4 @@
 
 
 # django-deu-course-registration
+# django-course-registration
