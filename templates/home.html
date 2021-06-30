@@ -1,0 +1,398 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="course_program" method="POST">
+    {% csrf_token %}
+    <div class="jumbotron jumbotron-fluid mt-5" style="background-color: rgba(101, 154, 253, 0.726);">
+        <div class="container">
+          <h3 class="display-4 ml-5">2020-2021 Fall Weekly Courses Program</h3>
+          <p class="lead ml-5">Dokuz Eylül University Computer Engineering Department</p>
+        </div>
+    </div>
+
+    <div class="card mb-5">
+        <div class="card-header lead" style="background-color: rgba(184, 184, 184, 0.726);">
+            1st Year Course Schedule
+        </div>
+        <table class="table table-bordered" style="font-size: smaller;">
+            <thead class="thead-light">
+                <tr class="text-center">
+                    <th scope="col">#</th>
+                    <th scope="col">Monday</th>
+                    <th scope="col">Tuesday</th>
+                    <th scope="col">Wednesday</th>
+                    <th scope="col">Thursday</th>
+                    <th scope="col">Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center">
+                    <th scope="row">1</th>
+                    <td><input type="text" name="course_id_mon11" value="CME1211" hidden>CME1211 (T)</td>
+                    <td><input type="text" name="course_id_tue11" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_wed11" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu11" value="CME1203" hidden>CME1203 (T)</td>
+                    <td><input type="text" name="course_id_fri11" value="MAT1001" hidden>MAT1001 (T)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">2</th>
+                    <td><input type="text" name="course_id_mon12" value="CME1211" hidden>CME1211 (T)</td>
+                    <td><input type="text" name="course_id_tue12" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_wed12" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu12" value="CME1203" hidden>CME1203 (T)</td>
+                    <td><input type="text" name="course_id_fri12" value="MAT1001" hidden>MAT1001 (T)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">3</th>
+                    <td><input type="text" name="course_id_mon13" value="CME1251" hidden>CME1251 (T)</td>
+                    <td><input type="text" name="course_id_tue13" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_wed13" value="CME1203" hidden>CME1203 (U)</td>
+                    <td><input type="text" name="course_id_thu13" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri13" value="CME1251" hidden>CME1251 (U)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">4</th>
+                    <td><input type="text" name="course_id_mon14" value="CME1251" hidden>CME1251 (T)</td>
+                    <td><input type="text" name="course_id_tue14" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_wed14" value="CME1203" hidden>CME1203 (U)</td>
+                    <td><input type="text" name="course_id_thu14" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri14" value="CME1251" hidden>CME1251 (U)</td>
+                </tr>
+                <tr style="background-color:rgba(184, 184, 184, 0.726); ">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">5</th>
+                    <td><input type="text" name="course_id_mon15" value="CME1211" hidden>CME1211 (U)</td>
+                    <td><input type="text" name="course_id_tue15" value="CME1205" hidden>CME1205 (T)</td>
+                    <td><input type="text" name="course_id_wed15" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu15" value="MAT1001" hidden>MAT1001 (T)</td>
+                    <td><input type="text" name="course_id_fri15" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">6</th>
+                    <td><input type="text" name="course_id_mon16" value="CME1211" hidden>CME1211 (U)</td>
+                    <td><input type="text" name="course_id_tue16" value="CME1205" hidden>CME1205 (T)</td>
+                    <td><input type="text" name="course_id_wed16" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu16" value="MAT1001" hidden>MAT1001 (T)</td>
+                    <td><input type="text" name="course_id_fri16" value="PHY1101" hidden>PHY1101 (T)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">7</th>
+                    <td><input type="text" name="course_id_mon17" value="KPD1001" hidden>KPD1001 (T)</td>
+                    <td><input type="text" name="course_id_tue17" value="CME1205" hidden>CME1205 (T)</td>
+                    <td><input type="text" name="course_id_wed17" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu17" value="PHY1101" hidden>PHY1101 (U)</td>
+                    <td><input type="text" name="course_id_fri17" value="PHY1101" hidden>PHY1101 (T)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">8</th>
+                    <td><input type="text" name="course_id_mon18" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_tue18" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_wed18" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu18" value="PHY1101" hidden>PHY1101 (U)</td>
+                    <td><input type="text" name="course_id_fri18" value="PHY1101" hidden>PHY1101 (T)</td>
+                </tr>      
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card mb-5">
+        <div class="card-header lead" style="background-color: rgba(184, 184, 184, 0.726);">
+            2nd Year Course Schedule
+        </div>
+        <table class="table table-bordered" style="font-size: smaller;">
+            <thead class="thead-light">
+                <tr class="text-center">
+                    <th scope="col">#</th>
+                    <th scope="col">Monday</th>
+                    <th scope="col">Tuesday</th>
+                    <th scope="col">Wednesday</th>
+                    <th scope="col">Thursday</th>
+                    <th scope="col">Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center">
+                    <th scope="row">1</th>
+                    <td><input type="text" name="course_id_mon21" value="CME2205" hidden>CME2205 (T)</td>
+                    <td><input type="text" name="course_id_tue21" value="CME2207" hidden>CME2207 (T)</td>
+                    <td><input type="text" name="course_id_wed21" value="CME2201" hidden>CME2201 (T)</td>
+                    <td><input type="text" name="course_id_thu21" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri21" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">2</th>
+                    <td><input type="text" name="course_id_mon22" value="CME2205" hidden>CME2205 (T)</td>
+                    <td><input type="text" name="course_id_tue22" value="CME2207" hidden>CME2207 (T)</td>
+                    <td><input type="text" name="course_id_wed22" value="CME2201" hidden>CME2201 (T)</td>
+                    <td><input type="text" name="course_id_thu22" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri22" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">3</th>
+                    <td><input type="text" name="course_id_mon23" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_tue23" value="CME2205" hidden>CME2205 (U)</td>
+                    <td><input type="text" name="course_id_wed23" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu23" value="CME2207" hidden>CME2207 (T)</td>
+                    <td><input type="text" name="course_id_fri23" value="CME2201" hidden>CME2201 (U)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">4</th>
+                    <td><input type="text" name="course_id_mon24" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_tue24" value="CME2205" hidden>CME2205 (U)</td>
+                    <td><input type="text" name="course_id_wed24" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu24" value="CME2207" hidden>CME2207 (T)</td>
+                    <td><input type="text" name="course_id_fri24" value="CME2201" hidden>CME2201 (U)</td>
+                </tr>
+                <tr style="background-color:rgba(184, 184, 184, 0.726);">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">5</th>
+                    <td><input type="text" name="course_id_mon25" value="CME2203" hidden>CME2203 (U)</td>
+                    <td><input type="text" name="course_id_tue25" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_wed25" value="CME2203" hidden>CME2203 (T)</td>
+                    <td><input type="text" name="course_id_thu25" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri25" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">6</th>
+                    <td><input type="text" name="course_id_mon26" value="CME2203" hidden>CME2203 (U)</td>
+                    <td><input type="text" name="course_id_tue26" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_wed26" value="CME2203" hidden>CME2203 (T)</td>
+                    <td><input type="text" name="course_id_thu26" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri26" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">7</th>
+                    <td><input type="text" name="course_id_mon27" value="TDL1001" hidden>TDL1001 (T)</td>
+                    <td><input type="text" name="course_id_tue27" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_wed27" value="CME2203" hidden>CME2203 (T)</td>
+                    <td><input type="text" name="course_id_thu27" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri27" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">8</th>
+                    <td><input type="text" name="course_id_mon28" value="TDL1001" hidden>TDL1001 (T)</td>
+                    <td><input type="text" name="course_id_tue28" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_wed28" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu28" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri28" value="-" hidden>-</td>
+                </tr>      
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card mb-5">
+        <div class="card-header lead" style="background-color: rgba(184, 184, 184, 0.726);">
+            3rd Year Course Schedule
+        </div>
+        <table class="table table-bordered" style="font-size: smaller;">
+            <thead class="thead-light">
+                <tr class="text-center">
+                    <th scope="col">#</th>
+                    <th scope="col">Monday</th>
+                    <th scope="col">Tuesday</th>
+                    <th scope="col">Wednesday</th>
+                    <th scope="col">Thursday</th>
+                    <th scope="col">Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center">
+                    <th scope="row">1</th>
+                    <td><input type="text" name="course_id_mon31" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_tue31" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_wed31" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu31" value="CME3205" hidden>CME3205 (U)</td>
+                    <td><input type="text" name="course_id_fri31" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">2</th>
+                    <td><input type="text" name="course_id_mon32" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_tue32" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_wed32" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu32" value="CME3205" hidden>CME3205 (U)</td>
+                    <td><input type="text" name="course_id_fri32" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">3</th>
+                    <td><input type="text" name="course_id_mon33" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_tue33" value="CME3201" hidden>CME3201 (T)</td>
+                    <td><input type="text" name="course_id_wed33" value="CME3205" hidden>CME3205 (T)</td>
+                    <td><input type="text" name="course_id_thu33" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri33" value="CME3207" hidden>CME3207 (U)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">4</th>
+                    <td><input type="text" name="course_id_mon34" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_tue34" value="CME3201" hidden>CME3201 (T)</td>
+                    <td><input type="text" name="course_id_wed34" value="CME3205" hidden>CME3205 (T)</td>
+                    <td><input type="text" name="course_id_thu34" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri34" value="CME3207" hidden>CME3207 (U)</td>
+                </tr>
+                <tr style="background-color:rgba(184, 184, 184, 0.726);">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">5</th>
+                    <td><input type="text" name="course_id_mon35" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_tue35" value="ATA1001" hidden>ATA1001 (T)</td>
+                    <td><input type="text" name="course_id_wed35" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu35" value="CME3203" hidden>CME3203 (U)</td>
+                    <td><input type="text" name="course_id_fri35" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">6</th>
+                    <td><input type="text" name="course_id_mon36" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_tue36" value="ATA1001" hidden>ATA1001 (T)</td>
+                    <td><input type="text" name="course_id_wed36" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu36" value="CME3203" hidden>CME3203 (U)</td>
+                    <td><input type="text" name="course_id_fri36" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">7</th>
+                    <td><input type="text" name="course_id_mon37" value="CME3203" hidden>CME3203 (T)</td>
+                    <td><input type="text" name="course_id_tue37" value="CME3207" hidden>CME3207 (T)</td>
+                    <td><input type="text" name="course_id_wed37" value="CME3201" hidden>CME3201 (U)</td>
+                    <td><input type="text" name="course_id_thu37" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri37" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">8</th>
+                    <td><input type="text" name="course_id_mon38" value="CME3203" hidden>CME3203 (T)</td>
+                    <td><input type="text" name="course_id_tue38" value="CME3207" hidden>CME3207 (T)</td>
+                    <td><input type="text" name="course_id_wed38" value="CME3201" hidden>CME3201 (U)</td>
+                    <td><input type="text" name="course_id_thu38" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri38" value="-" hidden>-</td>
+                </tr>  
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card mb-5">
+        <div class="card-header lead" style="background-color: rgba(184, 184, 184, 0.726);">
+            4th Year Course Schedule
+        </div>
+        <table class="table table-bordered" style="font-size: smaller;">
+            <thead class="thead-light">
+                <tr class="text-center">
+                    <th scope="col">#</th>
+                    <th scope="col">Monday</th>
+                    <th scope="col">Tuesday</th>
+                    <th scope="col">Wednesday</th>
+                    <th scope="col">Thursday</th>
+                    <th scope="col">Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center">
+                    <th scope="row">1</th>
+                    <td><input type="text" name="course_id_mon41" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_tue41" value="CME4432" hidden>CME4432 (T)</td>
+                    <td><input type="text" name="course_id_wed41" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu41" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_fri41" value="CME4412" hidden>CME4412 (T)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">2</th>
+                    <td><input type="text" name="course_id_mon42" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_tue42" value="CME4432" hidden>CME4432 (T)</td>
+                    <td><input type="text" name="course_id_wed42" value="CME4411" hidden>CME4411 (T)</td>
+                    <td><input type="text" name="course_id_thu42" value="CME4456" hidden>CME4456 (T)</td>
+                    <td><input type="text" name="course_id_fri42" value="CME4412" hidden>CME4412 (T)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">3</th>
+                    <td><input type="text" name="course_id_mon43" value="İSG4001" hidden>İSG4001 (T)</td>
+                    <td><input type="text" name="course_id_tue43" value="CME4432" hidden>CME4432 (U)</td>
+                    <td><input type="text" name="course_id_wed43" value="CME4411" hidden>CME4411 (T)</td>
+                    <td><input type="text" name="course_id_thu43" value="CME4456" hidden>CME4456 (T)</td>
+                    <td><input type="text" name="course_id_fri43" value="CME4412" hidden>CME4412 (U)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">4</th>
+                    <td><input type="text" name="course_id_mon44" value="İSG4001" hidden>İSG4001 (T)</td>
+                    <td><input type="text" name="course_id_tue44" value="CME4432" hidden>CME4432 (U)</td>
+                    <td><input type="text" name="course_id_wed44" value="CME4411" hidden>CME4411 (T)</td>
+                    <td><input type="text" name="course_id_thu44" value="CME4456" hidden>CME4456 (T)</td>
+                    <td><input type="text" name="course_id_fri44" value="CME4412" hidden>CME4412 (U)</td>
+                </tr>
+                <tr style="background-color:rgba(184, 184, 184, 0.726);">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">5</th>
+                    <td><input type="text" name="course_id_mon45" value="CME4416" hidden>CME4416 (T)</td>
+                    <td><input type="text" name="course_id_tue45" value="CME4408" hidden>CME4408 (T)</td>
+                    <td><input type="text" name="course_id_wed45" value="CME4462" hidden>CME4462 (T)</td>
+                    <td><input type="text" name="course_id_thu45" value="CME4422" hidden>CME4422 (T)</td>
+                    <td><input type="text" name="course_id_fri45" value="-" hidden>-</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">6</th>
+                    <td><input type="text" name="course_id_mon46" value="CME4416" hidden>CME4416 (T)</td>
+                    <td><input type="text" name="course_id_tue46" value="CME4408" hidden>CME4408 (T)</td>
+                    <td><input type="text" name="course_id_wed46" value="CME4462" hidden>CME4462 (T)</td>
+                    <td><input type="text" name="course_id_thu46" value="CME4422" hidden>CME4422 (T)</td>
+                    <td><input type="text" name="course_id_fri46" value="CME4201" hidden>CME4201 (U)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">7</th>
+                    <td><input type="text" name="course_id_mon47" value="CME4416" hidden>CME4416 (U)</td>
+                    <td><input type="text" name="course_id_tue47" value="CME4408" hidden>CME4408 (U)</td>
+                    <td><input type="text" name="course_id_wed47" value="CME4462" hidden>CME4462 (T)</td>
+                    <td><input type="text" name="course_id_thu47" value="CME4422" hidden>CME4422 (U)</td>
+                    <td><input type="text" name="course_id_fri47" value="CME4201" hidden>CME4201 (U)</td>
+                </tr>
+                <tr class="text-center">
+                    <th scope="row">8</th>
+                    <td><input type="text" name="course_id_mon48" value="CME4416" hidden>CME4416 (U)</td>
+                    <td><input type="text" name="course_id_tue48" value="CME4408" hidden>CME4408 (U)</td>
+                    <td><input type="text" name="course_id_wed48" value="-" hidden>-</td>
+                    <td><input type="text" name="course_id_thu48" value="CME4422" hidden>CME4422 (U)</td>
+                    <td><input type="text" name="course_id_fri48" value="-" hidden>-</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-danger mx-auto mb-3 lead" style="width: 200px;" type="submit">Send to DB</button>
+    </div>
+
+
+</form>
+
+
+
+{% for message in messages %}
+    {% if 'successful' in message.extra_tags %}
+    <div class="alert alert-success mt-3" role="alert">
+        {{ message }}
+    </div>
+    {% elif 'error' in message.extra_tags %}
+    <div class="alert alert-danger mt-3" role="alert">
+        {{ message }}
+    </div>
+    {% endif %}
+{% endfor %}
+
+{% endblock content %}   

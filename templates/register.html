@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="register" method="POST">
+    {% csrf_token %}
+    <div class="jumbotron jumbotron-fluid mt-5">
+        <div class="container">
+          <h1 class="display-4">Student Registration Information</h1>
+          <p class="lead">Please fill in all the information completely, otherwise student registration will not be completed.</p>
+        </div>
+    </div>
+    <div class="card lead">
+        <div class="card-header" style="background-color: thistle;">
+            Student Information
+        </div>
+        <div class="row mx-3 mt-5">
+            <div class="col">
+                <input type="text" name="first_name" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+                <input type="text" name="last_name" class="form-control" placeholder="Last name">
+            </div>
+        </div>
+        <div class="row mx-3 my-5">
+            <div class="col">
+                <input type="email" name="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="col">
+                <input type="password" name="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="col">
+                <input type="password" name="password2" class="form-control" placeholder="Password (confirm)">
+            </div>
+        </div>
+        <button class="btn btn-danger mx-auto mb-4 lead" style="width: 200px;" type="submit">Sign Up</button>
+    </div>
+</form>
+{% if messages %}
+{% for message in messages%}
+<div class="alert alert-danger mt-3"
+    role="alert">
+      {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{% endblock content %}

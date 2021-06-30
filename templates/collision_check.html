@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="course_registration" method="POST">
+    {% csrf_token %}
+    <div class="jumbotron jumbotron-fluid mt-5" style="background-color: rgba(253, 238, 101, 0.726);">
+        <div class="container">
+          <h1 class="display-4 ml-5">Course Collision Status</h1>
+          {% if user.is_authenticated %}
+          <p class="lead ml-5">Student Number: {{ user.id }}</p>
+          <p class="lead ml-5">Name and Surname: {{ user.first_name }} {{ user.last_name }}</p>
+          {% endif %}
+        </div>
+    </div>
+
+{% for message in messages %}
+    {% if 'error_collision' in message.extra_tags %}
+    <div class="alert alert-danger mt-3" role="alert">
+        {{ message }}
+    </div>
+    {% endif %}
+{% endfor %}
+
+    <div class="card mb-5">
+        <div class="card-header lead" style="background-color: rgba(101, 179, 253, 0.726);">
+            Overlapping Courses
+        </div>
+        <table class="table table-bordered pb-5" style="font-size: smaller;">
+            <thead class="thead-light">
+            <tr class="text-center">
+                <th scope="col">#</th>
+                <th scope="col">Course Code</th>
+                <th scope="col">Course Name</th>
+                <th style="background-color: rgb(206, 223, 230);" scope="col">Collision with</th>
+                <th scope="col">Course Code</th>
+                <th scope="col">Course Name</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for collision, i in zipped_data %}
+            
+            <tr class="text-center">
+                <th scope="row">{{i}}</th>
+                <td>{{collision.courseX.course_id}}</td>
+                <td>{{collision.courseX.course_name}}</td>
+                <td style="background-color: rgb(206, 223, 230);">VS</td>
+                <td>{{collision.courseY.course_id}}</td>
+                <td>{{collision.courseY.course_name}}</td>
+
+            </tr>
+            {% endfor %}          
+            </tbody>
+        </table>
+
+        <button class="btn btn-danger mx-3 mb-3 lead" style="width: 200px;" type="submit">
+        Return course selection
+        </button>
+
+    </div>
+ 
+</form>
+{% endblock content %}

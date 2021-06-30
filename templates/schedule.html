@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="course_registration" method="POST">
+    {% csrf_token %}
+    <div class="jumbotron jumbotron-fluid mt-5" style="background-color: rgba(253, 162, 101, 0.726);">
+        <div class="container">
+          <h1 class="display-4 ml-5">Course Program</h1>
+          {% if user.is_authenticated %}
+          <p class="lead ml-5">Student Number: {{ user.id }}</p>
+          <p class="lead ml-5">Name and Surname: {{ user.first_name }} {{ user.last_name }}</p>
+          {% endif %}
+        </div>
+    </div>
+
+{% for message in messages %}
+    {% if 'successful' in message.extra_tags %}
+    <div class="alert alert-success mt-3" role="alert">
+        {{ message }}
+    </div>
+    {% elif 'error' in message.extra_tags %}
+    <div class="alert alert-danger mt-3" role="alert">
+        {{ message }}
+    </div>
+    {% endif %}
+{% endfor %}
+
+    <div class="card mb-5">
+        <div class="card-header lead" style="background-color: rgba(101, 179, 253, 0.726);">
+            Registered Courses
+        </div>
+        <table class="table table-bordered pb-5" style="font-size: smaller;">
+            <thead class="thead-light">
+            <tr class="text-center">
+                <th scope="col">#</th>
+                <th scope="col">Department Name</th>
+                <th scope="col">Course Code</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">Theoritacal</th>
+                <th scope="col">Practical</th>
+                <th scope="col">Akts</th>
+                <th scope="col">Credit</th>
+                <th scope="col">Course Type</th>
+                <th scope="col">Branch</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for crs, i in zipped_data %}
+            
+            <tr class="text-center">
+                <th scope="row">{{i}}</th>
+                <td>{{crs.department_name}}</td>
+                <td>{{crs.course_id}}</td>
+                <td>{{crs.course_name}}</td>
+                <td>{{crs.theoretical_hour}}</td>
+                <td>{{crs.practical_hour}}</td>
+                <td>{{crs.akts}}</td>
+                <td>{{crs.credit}}</td>
+                <td>{{crs.course_type}}</td>
+                <td>{{crs.branch}}</td>
+            </tr>
+            {% endfor %}          
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card mb-5">
+        <div class="card-header lead" style="background-color: darkseagreen;">
+            Student's Course Schedule
+        </div>
+        <table class="table table-bordered pb-5" style="font-size: smaller;">
+            <thead class="thead-light">
+            <tr class="text-center">
+                <th scope="col">#</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Friday</th>
+            </tr>
+            </thead>
+            <tbody>
+            
+            {% for reg, i in zipped_data_program %}
+            
+            <tr class="text-center">
+                <th scope="row">{{i}}</th>
+                <td>{{reg.course_program_mon.course_id_mon}}</td>
+                <td>{{reg.course_program_tue.course_id_tue}}</td>
+                <td>{{reg.course_program_wed.course_id_wed}}</td>
+                <td>{{reg.course_program_thu.course_id_thu}}</td>
+                <td>{{reg.course_program_fri.course_id_fri}}</td>
+
+            </tr>
+            {% endfor %}          
+            </tbody>
+        </table>
+    </div>
+ 
+</form>
+{% endblock content %}
